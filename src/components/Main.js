@@ -1,5 +1,5 @@
-import React from 'react'
-import './Main.css'
+import React, { useState } from 'react'
+import '../components/assets/styles/Main.css'
 import dkCrest from '../components/assets/imgs/dkCrest.png'
 import druidCrest from '../components/assets/imgs/druidCrest.png'
 import dhCrest from '../components/assets/imgs/dhCrest.png'
@@ -13,7 +13,9 @@ import shamanCrest from '../components/assets/imgs/shamanCrest.png'
 import warlockCrest from '../components/assets/imgs/warlockCrest.png'
 import warriorCrest from '../components/assets/imgs/warriorCrest.png'
 import  Card from './Card'
-const Main = () => {
+
+
+const Main = props => {
   const classIcons = [
     {
       className: 'Death Knight',
@@ -64,15 +66,13 @@ const Main = () => {
       classIcon: warriorCrest
     },
   ]
-   
-    const classArr = classIcons.map((className,  i) => {
-     return (
-              <img className='classIcons four wide column' key={classIcons[i].classIcon} alt={classIcons[i].className} src={classIcons[i].classIcon} />    
-          )
-    })
+     
     
-    return(
-      <div className="ui grid">{classArr}</div>
+    
+    return( 
+      <div className="ui equal width grid container">
+         <Card onClick={props.addCount}classIcons={classIcons} />
+      </div>
     )
   }
 

@@ -1,0 +1,10 @@
+.ui.grid {
+	width: 50%;
+	margin: 0 auto;
+	gap: -15%;
+}
+
+.classIcons {
+	width: 100px;
+	height: 100px;
+}
